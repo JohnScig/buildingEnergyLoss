@@ -18,15 +18,6 @@ namespace BuildingEnergyLoss
             new Material ("Plasterboard"),
             new Material ("Plaster")};
             return ret;
-
-            //cBox.Items.Add("Ytong");
-            //cBox.Items.Add("Concrete");
-            //cBox.Items.Add("Polystyrene");
-            //cBox.Items.Add("Glass Wool");
-            //cBox.Items.Add("Plasterboard");
-            //cBox.Items.Add("Plaster");
-            //cBox.Items.Add("No Material");
         }
-
     }
 }
