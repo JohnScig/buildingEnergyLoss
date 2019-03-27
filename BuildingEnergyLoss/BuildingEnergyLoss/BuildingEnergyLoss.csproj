@@ -55,10 +55,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface1.cs" />
+    <Compile Include="MainViewModel.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="MaterialRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModelGeneral.cs" />
     <Compile Include="ViewModel_Floor.cs" />
     <Compile Include="ViewModel_Roof.cs" />
     <Compile Include="ViewModel_Surroundings.cs" />

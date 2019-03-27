@@ -14,6 +14,11 @@ namespace BuildingEnergyLoss
         public double WindModifier { get; set; }
         public double CoverageModifier { get; set; }
 
+        public double GroundModifiers()
+        {
+            return Math.Abs(InsideTemp - 3);
+        }
+
         public double AllModifiers()
         {
             return (Math.Abs(InsideTemp - OutsideTemp)) * WindModifier * CoverageModifier;

@@ -70,6 +70,12 @@
             this.cBox_FloorMaterial01 = new System.Windows.Forms.ComboBox();
             this.lbl_floorTab = new System.Windows.Forms.Label();
             this.tab_Walls = new System.Windows.Forms.TabPage();
+            this.tBox_WinArea = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.cBox_WindowMaterial01 = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.tBox_WallArea = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -128,6 +134,8 @@
             this.tab_HeatGain = new System.Windows.Forms.TabPage();
             this.btn_Calculate = new System.Windows.Forms.Button();
             this.tBox_Result = new System.Windows.Forms.RichTextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.tBox_WindowGirth01 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tab_Surroundings.SuspendLayout();
             this.gBox_CoverFactor.SuspendLayout();
@@ -138,6 +146,7 @@
             this.panel_Floor_02.SuspendLayout();
             this.panel_Floor_01.SuspendLayout();
             this.tab_Walls.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -161,7 +170,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 494);
+            this.tabControl1.Size = new System.Drawing.Size(490, 494);
             this.tabControl1.TabIndex = 0;
             // 
             // tab_Surroundings
@@ -176,7 +185,7 @@
             this.tab_Surroundings.Location = new System.Drawing.Point(4, 22);
             this.tab_Surroundings.Name = "tab_Surroundings";
             this.tab_Surroundings.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Surroundings.Size = new System.Drawing.Size(768, 468);
+            this.tab_Surroundings.Size = new System.Drawing.Size(402, 468);
             this.tab_Surroundings.TabIndex = 0;
             this.tab_Surroundings.Text = "Surroundings";
             // 
@@ -303,7 +312,7 @@
             this.tab_Floors.Location = new System.Drawing.Point(4, 22);
             this.tab_Floors.Name = "tab_Floors";
             this.tab_Floors.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Floors.Size = new System.Drawing.Size(768, 468);
+            this.tab_Floors.Size = new System.Drawing.Size(482, 468);
             this.tab_Floors.TabIndex = 1;
             this.tab_Floors.Text = "Floors";
             // 
@@ -556,6 +565,9 @@
             // tab_Walls
             // 
             this.tab_Walls.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.tab_Walls.Controls.Add(this.tBox_WinArea);
+            this.tab_Walls.Controls.Add(this.panel9);
+            this.tab_Walls.Controls.Add(this.label33);
             this.tab_Walls.Controls.Add(this.label28);
             this.tab_Walls.Controls.Add(this.tBox_WallArea);
             this.tab_Walls.Controls.Add(this.panel1);
@@ -565,9 +577,64 @@
             this.tab_Walls.Controls.Add(this.label13);
             this.tab_Walls.Location = new System.Drawing.Point(4, 22);
             this.tab_Walls.Name = "tab_Walls";
-            this.tab_Walls.Size = new System.Drawing.Size(768, 468);
+            this.tab_Walls.Size = new System.Drawing.Size(482, 468);
             this.tab_Walls.TabIndex = 2;
             this.tab_Walls.Text = "Walls";
+            // 
+            // tBox_WinArea
+            // 
+            this.tBox_WinArea.Location = new System.Drawing.Point(363, 434);
+            this.tBox_WinArea.Name = "tBox_WinArea";
+            this.tBox_WinArea.Size = new System.Drawing.Size(63, 20);
+            this.tBox_WinArea.TabIndex = 14;
+            this.tBox_WinArea.Text = "1";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label35);
+            this.panel9.Controls.Add(this.tBox_WindowGirth01);
+            this.panel9.Controls.Add(this.label34);
+            this.panel9.Controls.Add(this.label32);
+            this.panel9.Controls.Add(this.cBox_WindowMaterial01);
+            this.panel9.Location = new System.Drawing.Point(233, 326);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(221, 90);
+            this.panel9.TabIndex = 13;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 46);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(83, 13);
+            this.label34.TabIndex = 2;
+            this.label34.Text = "Type of Material";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(4, 4);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(51, 13);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Windows";
+            // 
+            // cBox_WindowMaterial01
+            // 
+            this.cBox_WindowMaterial01.FormattingEnabled = true;
+            this.cBox_WindowMaterial01.Location = new System.Drawing.Point(3, 66);
+            this.cBox_WindowMaterial01.Name = "cBox_WindowMaterial01";
+            this.cBox_WindowMaterial01.Size = new System.Drawing.Size(121, 21);
+            this.cBox_WindowMaterial01.TabIndex = 0;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(302, 437);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(56, 13);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Total Area";
             // 
             // label28
             // 
@@ -827,7 +894,7 @@
             this.tab_Roof.Controls.Add(this.label26);
             this.tab_Roof.Location = new System.Drawing.Point(4, 22);
             this.tab_Roof.Name = "tab_Roof";
-            this.tab_Roof.Size = new System.Drawing.Size(768, 468);
+            this.tab_Roof.Size = new System.Drawing.Size(482, 468);
             this.tab_Roof.TabIndex = 3;
             this.tab_Roof.Text = "Roof";
             // 
@@ -1082,13 +1149,13 @@
             this.tab_HeatGain.BackColor = System.Drawing.Color.MistyRose;
             this.tab_HeatGain.Location = new System.Drawing.Point(4, 22);
             this.tab_HeatGain.Name = "tab_HeatGain";
-            this.tab_HeatGain.Size = new System.Drawing.Size(768, 468);
+            this.tab_HeatGain.Size = new System.Drawing.Size(402, 468);
             this.tab_HeatGain.TabIndex = 4;
             this.tab_HeatGain.Text = "Heat Gain";
             // 
             // btn_Calculate
             // 
-            this.btn_Calculate.Location = new System.Drawing.Point(610, 512);
+            this.btn_Calculate.Location = new System.Drawing.Point(190, 512);
             this.btn_Calculate.Name = "btn_Calculate";
             this.btn_Calculate.Size = new System.Drawing.Size(174, 50);
             this.btn_Calculate.TabIndex = 1;
@@ -1098,17 +1165,34 @@
             // 
             // tBox_Result
             // 
-            this.tBox_Result.Location = new System.Drawing.Point(432, 513);
+            this.tBox_Result.Location = new System.Drawing.Point(12, 513);
             this.tBox_Result.Name = "tBox_Result";
             this.tBox_Result.Size = new System.Drawing.Size(172, 49);
             this.tBox_Result.TabIndex = 2;
             this.tBox_Result.Text = "";
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(127, 47);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(29, 13);
+            this.label35.TabIndex = 16;
+            this.label35.Text = "Girth";
+            // 
+            // tBox_WindowGirth01
+            // 
+            this.tBox_WindowGirth01.Location = new System.Drawing.Point(130, 67);
+            this.tBox_WindowGirth01.Name = "tBox_WindowGirth01";
+            this.tBox_WindowGirth01.Size = new System.Drawing.Size(63, 20);
+            this.tBox_WindowGirth01.TabIndex = 15;
+            this.tBox_WindowGirth01.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 574);
+            this.ClientSize = new System.Drawing.Size(514, 574);
             this.Controls.Add(this.tBox_Result);
             this.Controls.Add(this.btn_Calculate);
             this.Controls.Add(this.tabControl1);
@@ -1133,6 +1217,8 @@
             this.panel_Floor_01.PerformLayout();
             this.tab_Walls.ResumeLayout(false);
             this.tab_Walls.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1257,6 +1343,14 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox tBox_InTemp;
         private System.Windows.Forms.TextBox tBox_OutTemp;
+        private System.Windows.Forms.TextBox tBox_WinArea;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox cBox_WindowMaterial01;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox tBox_WindowGirth01;
     }
 }
 

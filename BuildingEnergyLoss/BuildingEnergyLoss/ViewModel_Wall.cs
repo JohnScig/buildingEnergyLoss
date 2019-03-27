@@ -17,51 +17,21 @@ namespace BuildingEnergyLoss
         public double WallMaterial03Girth { get; set; }
         public string WallMaterial04 { get; set; }
         public double WallMaterial04Girth { get; set; }
+        public string WindowsMaterial01 { get; set; }
+        public double WindowsMaterial01Girth { get; set; }
 
-
-        public Material WallMat01 { get; set; }
-        public Material WallMat02 { get; set; }
-        public Material WallMat03 { get; set; }
-        public Material WallMat04 { get; set; }
-        public List<IMaterial> WallMats;
-
-        public Fabric Walls { get; set; }
-        public double AreaHeatLoss { get; set; }
         public double Area { get; set; }
 
 
-        public void BuildWall(MaterialRepository rep)
+        public double BuildWall(MaterialRepository rep)
         {
-            //MaterialRepository rep = new MaterialRepository();
-            WallMats = new List<IMaterial>();
-            if (!string.IsNullOrWhiteSpace(WallMaterial01))
-            {
-                WallMat01 = rep.CreateMaterial(WallMaterial01, WallMaterial01Girth);
-                WallMats.Add(WallMat01);
-            }
+            List <IMaterial> WallMats = new List<IMaterial>();
+            WallMats.Add(rep.CreateMaterial(WallMaterial01, WallMaterial01Girth));
+            WallMats.Add(rep.CreateMaterial(WallMaterial02, WallMaterial02Girth));
+            WallMats.Add(rep.CreateMaterial(WallMaterial03, WallMaterial03Girth));
+            WallMats.Add(rep.CreateMaterial(WallMaterial04, WallMaterial04Girth));
 
-            if (!string.IsNullOrWhiteSpace(WallMaterial02))
-            {
-                WallMat02 = rep.CreateMaterial(WallMaterial02, WallMaterial02Girth);
-                WallMats.Add(WallMat02);
-            }
-
-            if (!string.IsNullOrWhiteSpace(WallMaterial03))
-            {
-                WallMat03 = rep.CreateMaterial(WallMaterial03, WallMaterial03Girth);
-                WallMats.Add(WallMat03);
-            }
-
-            if (!string.IsNullOrWhiteSpace(WallMaterial04))
-            {
-                WallMat04 = rep.CreateMaterial(WallMaterial04, WallMaterial04Girth);
-                WallMats.Add(WallMat04);
-            }
-
-            Walls = new Fabric("Wall", WallMats, Area);
-            //MessageBox.Show(Walls.UnitFabricHeatLoss().ToString());
-            //MessageBox.Show(Walls.AreaFabricHeatLoss().ToString());
-            AreaHeatLoss = Walls.AreaFabricHeatLoss();
+            return (new Fabric("Wall", WallMats, Area)).AreaFabricHeatLoss();
         }
     }
 }

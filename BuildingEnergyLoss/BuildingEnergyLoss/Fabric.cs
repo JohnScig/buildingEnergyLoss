@@ -10,13 +10,19 @@ namespace BuildingEnergyLoss
     {
         public string Name { get; set; }
         public double TotalArea { get; set; }
-        public List<IMaterial> Materials { get; set; } 
+        public List<IMaterial> Materials { get; set; }
 
 
 
         public Fabric(string name, List<IMaterial> materials, double totalArea)
         {
             this.Name = name;
+            this.Materials = materials;
+            this.TotalArea = totalArea;
+        }
+
+    public Fabric(List<IMaterial> materials, double totalArea)
+        {
             this.Materials = materials;
             this.TotalArea = totalArea;
         }
@@ -33,12 +39,7 @@ namespace BuildingEnergyLoss
 
         public double AreaFabricHeatLoss()
         {
-            double resistanceSum = 0;
-            foreach (Material material in Materials)
-            {
-                resistanceSum += material.UnitHeatResistance();
-            }
-            return ((1/resistanceSum)*TotalArea);
+            return (UnitFabricHeatLoss()*TotalArea);
         }
     }
 }

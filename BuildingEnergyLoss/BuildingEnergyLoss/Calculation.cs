@@ -8,11 +8,11 @@ namespace BuildingEnergyLoss
 {
     class Calculation
     {
-        public string GetFinalResult(ViewModel_Floor vmf, ViewModel_Roof vmr, ViewModel_Wall vmw, ViewModel_Surroundings vms,MaterialRepository materialRepository)
-        {
-            //vmf.BuildFloor
+        //public string GetFinalResult(ViewModel_Floor vmf, ViewModel_Roof vmr, ViewModel_Wall vmw, ViewModel_Surroundings vms)
+        //{
+        //    //vmf.BuildFloor
 
-            return ((vmf.AreaHeatLoss + vmw.AreaHeatLoss + vmr.AreaHeatLoss) * vms.AllModifiers()).ToString();
-        }
+        //    return ((vmf.AreaHeatLoss + vmw.AreaHeatLoss + vmr.AreaHeatLoss) * vms.AllModifiers()).ToString();
+        //}
     }
 }

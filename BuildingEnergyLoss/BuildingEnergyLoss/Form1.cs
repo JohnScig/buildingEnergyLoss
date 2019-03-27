@@ -18,25 +18,25 @@ namespace BuildingEnergyLoss
             InitializeComponent();
             LoadComboBoxes();
         }
-
-        public ViewModel_Floor _viewModelFloor = new ViewModel_Floor();
-        public ViewModel_Wall _viewModelWall = new ViewModel_Wall();
-        public ViewModel_Roof _viewModelRoof = new ViewModel_Roof();
-        public ViewModel_Surroundings _viewModelSurroundings = new ViewModel_Surroundings();
-        MaterialRepository materialRepository = new MaterialRepository();
+        private MainViewModel _mainViewModel = new MainViewModel();
+        private ViewModelGeneral _viewModelFloor = new ViewModelGeneral();
+        private ViewModelGeneral _viewModelWall = new ViewModelGeneral();
+        private ViewModelGeneral _viewModelRoof = new ViewModelGeneral();
+        private ViewModel_Surroundings _viewModelSurroundings = new ViewModel_Surroundings();
 
         public void LoadComboBoxes()
         {
             List<ComboBox> comboBoxes = new List<ComboBox>()
             {
                 cBox_FloorMaterial01, cBox_FloorMaterial02, cBox_FloorMaterial03, cBox_FloorMaterial04,
-                cBox_WallMaterial01, cBox_WallMaterial02, cBox_WallMaterial03, cBox_WallMaterial04,
+                cBox_WallMaterial01, cBox_WallMaterial02, cBox_WallMaterial03, cBox_WallMaterial04, cBox_WindowMaterial01,
                 cBox_RoofMaterial01, cBox_RoofMaterial02, cBox_RoofMaterial03, cBox_RoofMaterial04
             };
-            
+
             foreach (ComboBox cBox in comboBoxes)
             {
-                cBox.DataSource = materialRepository.GetMaterials();
+                //cBox.DataSource = materialRepository.GetMaterials();
+                cBox.DataSource = _mainViewModel.GetMaterials();
                 cBox.BindingContext = new BindingContext();
                 cBox.DisplayMember = nameof(Material.Name);
                 cBox.ValueMember = nameof(Material.Name);
@@ -72,46 +72,46 @@ namespace BuildingEnergyLoss
 
         public void SendFloorData()
         {
-            _viewModelFloor.FloorMaterial01 = cBox_FloorMaterial01.SelectedValue.ToString();
-            Debug.WriteLine(cBox_FloorMaterial01.SelectedValue.ToString());
-            _viewModelFloor.FloorMaterial02 = cBox_FloorMaterial02.SelectedValue.ToString();
-            _viewModelFloor.FloorMaterial03 = cBox_FloorMaterial03.SelectedValue.ToString();
-            _viewModelFloor.FloorMaterial04 = cBox_FloorMaterial04.SelectedValue.ToString();
+            _viewModelFloor.Material01 = cBox_FloorMaterial01.SelectedValue.ToString();
+            _viewModelFloor.Material02 = cBox_FloorMaterial02.SelectedValue.ToString();
+            _viewModelFloor.Material03 = cBox_FloorMaterial03.SelectedValue.ToString();
+            _viewModelFloor.Material04 = cBox_FloorMaterial04.SelectedValue.ToString();
 
-            _viewModelFloor.FloorMaterial01Girth = double.Parse(tbox_FloorGirth01.Text);
-            _viewModelFloor.FloorMaterial02Girth = double.Parse(tbox_FloorGirth02.Text);
-            _viewModelFloor.FloorMaterial03Girth = double.Parse(tbox_FloorGirth03.Text);
-            _viewModelFloor.FloorMaterial04Girth = double.Parse(tbox_FloorGirth04.Text);
+            _viewModelFloor.Material01Girth = double.Parse(tbox_FloorGirth01.Text);
+            _viewModelFloor.Material02Girth = double.Parse(tbox_FloorGirth02.Text);
+            _viewModelFloor.Material03Girth = double.Parse(tbox_FloorGirth03.Text);
+            _viewModelFloor.Material04Girth = double.Parse(tbox_FloorGirth04.Text);
 
             _viewModelFloor.Area = double.Parse(tBox_FloorArea.Text);
         }
 
         public void SendWallData()
         {
-            _viewModelWall.WallMaterial01 = cBox_WallMaterial01.SelectedValue.ToString();
-            _viewModelWall.WallMaterial02 = cBox_WallMaterial02.SelectedValue.ToString();
-            _viewModelWall.WallMaterial03 = cBox_WallMaterial03.SelectedValue.ToString();
-            _viewModelWall.WallMaterial04 = cBox_WallMaterial04.SelectedValue.ToString();
+            _viewModelWall.Material01 = cBox_WallMaterial01.SelectedValue.ToString();
+            _viewModelWall.Material02 = cBox_WallMaterial02.SelectedValue.ToString();
+            _viewModelWall.Material03 = cBox_WallMaterial03.SelectedValue.ToString();
+            _viewModelWall.Material04 = cBox_WallMaterial04.SelectedValue.ToString();
 
-            _viewModelWall.WallMaterial01Girth = double.Parse(tbox_WallGirth01.Text);
-            _viewModelWall.WallMaterial02Girth = double.Parse(tbox_WallGirth02.Text);
-            _viewModelWall.WallMaterial03Girth = double.Parse(tbox_WallGirth03.Text);
-            _viewModelWall.WallMaterial04Girth = double.Parse(tbox_WallGirth04.Text);
+            _viewModelWall.Material01Girth = double.Parse(tbox_WallGirth01.Text);
+            _viewModelWall.Material02Girth = double.Parse(tbox_WallGirth02.Text);
+            _viewModelWall.Material03Girth = double.Parse(tbox_WallGirth03.Text);
+            _viewModelWall.Material04Girth = double.Parse(tbox_WallGirth04.Text);
 
             _viewModelWall.Area = double.Parse(tBox_WallArea.Text);
+            //_viewModelWall.WinArea = double.Parse(tBox_WinArea.Text);
         }
 
         public void SendRoofData()
         {
-            _viewModelRoof.RoofMaterial01 = cBox_RoofMaterial01.SelectedValue.ToString();
-            _viewModelRoof.RoofMaterial02 = cBox_RoofMaterial02.SelectedValue.ToString();
-            _viewModelRoof.RoofMaterial03 = cBox_RoofMaterial03.SelectedValue.ToString();
-            _viewModelRoof.RoofMaterial04 = cBox_RoofMaterial04.SelectedValue.ToString();
+            _viewModelRoof.Material01 = cBox_RoofMaterial01.SelectedValue.ToString();
+            _viewModelRoof.Material02 = cBox_RoofMaterial02.SelectedValue.ToString();
+            _viewModelRoof.Material03 = cBox_RoofMaterial03.SelectedValue.ToString();
+            _viewModelRoof.Material04 = cBox_RoofMaterial04.SelectedValue.ToString();
 
-            _viewModelRoof.RoofMaterial01Girth = double.Parse(tbox_RoofGirth01.Text);
-            _viewModelRoof.RoofMaterial02Girth = double.Parse(tbox_RoofGirth02.Text);
-            _viewModelRoof.RoofMaterial03Girth = double.Parse(tbox_RoofGirth03.Text);
-            _viewModelRoof.RoofMaterial04Girth = double.Parse(tbox_RoofGirth04.Text);
+            _viewModelRoof.Material01Girth = double.Parse(tbox_RoofGirth01.Text);
+            _viewModelRoof.Material02Girth = double.Parse(tbox_RoofGirth02.Text);
+            _viewModelRoof.Material03Girth = double.Parse(tbox_RoofGirth03.Text);
+            _viewModelRoof.Material04Girth = double.Parse(tbox_RoofGirth04.Text);
 
             _viewModelRoof.Area = double.Parse(tBox_RoofArea.Text);
         }
@@ -122,14 +122,8 @@ namespace BuildingEnergyLoss
             SendWallData();
             SendRoofData();
             SendSurroundingsData();
-            _viewModelFloor.BuildFloor(materialRepository);
-            _viewModelWall.BuildWall(materialRepository);
-            _viewModelRoof.BuildRoof(materialRepository);
 
-            tBox_Result.Text = new Calculation().GetFinalResult(_viewModelFloor, _viewModelRoof, _viewModelWall, _viewModelSurroundings,materialRepository);
-
-            //double result = (_viewModelFloor.AreaHeatLoss + _viewModelWall.AreaHeatLoss + _viewModelRoof.AreaHeatLoss)*_viewModelSurroundings.AllModifiers();
-            //tBox_Result.Text = result.ToString();
+            tBox_Result.Text = _mainViewModel.GetFinalResult(_viewModelFloor, _viewModelRoof, _viewModelWall, _viewModelSurroundings);
         }
     }
 }
