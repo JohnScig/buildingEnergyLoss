@@ -22,13 +22,13 @@ namespace BuildingEnergyLoss
 
         public double CalculateOverallHeatLoss(MaterialRepository rep)
         {
-            List<IMaterial> WallMats = new List<IMaterial>();
-            WallMats.Add(rep.CreateMaterial(Material01, Material01Girth));
-            WallMats.Add(rep.CreateMaterial(Material02, Material02Girth));
-            WallMats.Add(rep.CreateMaterial(Material03, Material03Girth));
-            WallMats.Add(rep.CreateMaterial(Material04, Material04Girth));
+            List<IMaterial> Mats = new List<IMaterial>();
+            Mats.Add(rep.CreateMaterial(Material01, Material01Girth));
+            Mats.Add(rep.CreateMaterial(Material02, Material02Girth));
+            Mats.Add(rep.CreateMaterial(Material03, Material03Girth));
+            Mats.Add(rep.CreateMaterial(Material04, Material04Girth));
 
-            return (new Fabric(WallMats, Area)).AreaFabricHeatLoss();
+            return (new Fabric(Mats, Area)).AreaFabricHeatLoss();
         }
     }
 }

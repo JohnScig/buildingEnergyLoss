@@ -31,7 +31,8 @@ namespace BuildingEnergyLoss
             {
                 if (name == material.Name)
                 {
-                    return new Material() { Name = material.Name, HeatConductivity = material.HeatConductivity, Thickness = thickness };
+                    return new Material() { Name = material.Name, HeatConductivity = material.HeatConductivity,
+                        Thickness = thickness };
                 }
             }
 

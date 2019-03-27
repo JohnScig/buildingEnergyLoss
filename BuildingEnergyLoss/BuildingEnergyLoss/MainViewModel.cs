@@ -15,14 +15,14 @@ namespace BuildingEnergyLoss
             return MaterialRepository.GetMaterials();
         }
 
-        public string GetFinalResult(ViewModelGeneral viewModelFloor, ViewModelGeneral viewModelRoof, ViewModelGeneral viewModelWalls, ViewModel_Surroundings viewModelSurroundings)
+        public string GetFinalResult(ViewModelGeneral viewModelFloor, ViewModelGeneral viewModelRoof, ViewModelGeneral viewModelWalls, ViewModelSurroundings viewModelSurroundings)
         {
 
             double floorHeatLoss = viewModelFloor.CalculateOverallHeatLoss(MaterialRepository) * viewModelSurroundings.GroundModifiers();
             double roofHeatLoss = viewModelRoof.CalculateOverallHeatLoss(MaterialRepository) * viewModelSurroundings.AllModifiers();
             double wallHeatLoss = viewModelWalls.CalculateOverallHeatLoss(MaterialRepository) * viewModelSurroundings.AllModifiers();
 
-            return floorHeatLoss + roofHeatLoss + wallHeatLoss.ToString();
+            return (floorHeatLoss + roofHeatLoss + wallHeatLoss).ToString();
         }
     }
 }

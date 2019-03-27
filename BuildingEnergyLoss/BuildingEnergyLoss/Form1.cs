@@ -18,11 +18,12 @@ namespace BuildingEnergyLoss
             InitializeComponent();
             LoadComboBoxes();
         }
+
         private MainViewModel _mainViewModel = new MainViewModel();
         private ViewModelGeneral _viewModelFloor = new ViewModelGeneral();
         private ViewModelGeneral _viewModelWall = new ViewModelGeneral();
         private ViewModelGeneral _viewModelRoof = new ViewModelGeneral();
-        private ViewModel_Surroundings _viewModelSurroundings = new ViewModel_Surroundings();
+        private ViewModelSurroundings _viewModelSurroundings = new ViewModelSurroundings();
 
         public void LoadComboBoxes()
         {
@@ -85,6 +86,11 @@ namespace BuildingEnergyLoss
             _viewModelFloor.Area = double.Parse(tBox_FloorArea.Text);
         }
 
+        public void SendWindowData()
+        {
+            //_viewModelWall.WinArea = double.Parse(tBox_WinArea.Text);
+        }
+
         public void SendWallData()
         {
             _viewModelWall.Material01 = cBox_WallMaterial01.SelectedValue.ToString();
@@ -98,7 +104,6 @@ namespace BuildingEnergyLoss
             _viewModelWall.Material04Girth = double.Parse(tbox_WallGirth04.Text);
 
             _viewModelWall.Area = double.Parse(tBox_WallArea.Text);
-            //_viewModelWall.WinArea = double.Parse(tBox_WinArea.Text);
         }
 
         public void SendRoofData()

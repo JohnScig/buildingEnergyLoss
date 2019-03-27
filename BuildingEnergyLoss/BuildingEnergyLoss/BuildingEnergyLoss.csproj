@@ -63,7 +63,7 @@
     <Compile Include="ViewModelGeneral.cs" />
     <Compile Include="ViewModel_Floor.cs" />
     <Compile Include="ViewModel_Roof.cs" />
-    <Compile Include="ViewModel_Surroundings.cs" />
+    <Compile Include="ViewModelSurroundings.cs" />
     <Compile Include="ViewModel_Wall.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

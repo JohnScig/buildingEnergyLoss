@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BuildingEnergyLoss
 {
-    public class ViewModel_Surroundings
+    public class ViewModelSurroundings
     {
         public int OutsideTemp { get; set; }
         public int InsideTemp { get; set; }
