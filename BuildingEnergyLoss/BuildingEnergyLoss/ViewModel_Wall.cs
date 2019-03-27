@@ -30,9 +30,9 @@ namespace BuildingEnergyLoss
         public double Area { get; set; }
 
 
-        public void BuildWall()
+        public void BuildWall(MaterialRepository rep)
         {
-            MaterialRepository rep = new MaterialRepository();
+            //MaterialRepository rep = new MaterialRepository();
             WallMats = new List<IMaterial>();
             if (!string.IsNullOrWhiteSpace(WallMaterial01))
             {

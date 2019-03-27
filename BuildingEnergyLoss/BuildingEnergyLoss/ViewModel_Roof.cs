@@ -30,9 +30,9 @@ namespace BuildingEnergyLoss
         public double AreaHeatLoss { get; set; }
         public double Area { get; set; }
 
-        public void BuildRoof()
+        public void BuildRoof(MaterialRepository rep)
         {
-            MaterialRepository rep = new MaterialRepository();
+            //MaterialRepository rep = new MaterialRepository();
             RoofMats = new List<IMaterial>();
             if (!string.IsNullOrWhiteSpace(RoofMaterial01))
             {
@@ -61,7 +61,7 @@ namespace BuildingEnergyLoss
 
             Roofs = new Fabric("Roof", RoofMats, Area);
             //MessageBox.Show(Roofs.UnitFabricHeatLoss().ToString());
-            //MessageBox.Show(Roofs.AreaFabricHeatLoss().ToString());
+            MessageBox.Show(Roofs.AreaFabricHeatLoss().ToString());
             AreaHeatLoss = Roofs.AreaFabricHeatLoss();
         }
     }

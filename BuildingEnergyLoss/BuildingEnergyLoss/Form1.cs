@@ -23,6 +23,7 @@ namespace BuildingEnergyLoss
         public ViewModel_Wall _viewModelWall = new ViewModel_Wall();
         public ViewModel_Roof _viewModelRoof = new ViewModel_Roof();
         public ViewModel_Surroundings _viewModelSurroundings = new ViewModel_Surroundings();
+        MaterialRepository materialRepository = new MaterialRepository();
 
         public void LoadComboBoxes()
         {
@@ -32,16 +33,10 @@ namespace BuildingEnergyLoss
                 cBox_WallMaterial01, cBox_WallMaterial02, cBox_WallMaterial03, cBox_WallMaterial04,
                 cBox_RoofMaterial01, cBox_RoofMaterial02, cBox_RoofMaterial03, cBox_RoofMaterial04
             };
-            IMaterialRepository rep = new MaterialRepository();
+            
             foreach (ComboBox cBox in comboBoxes)
             {
-                //foreach (Material material in rep.GetMaterials())
-                //{
-                //    cBox.Items.Add(material);
-                //}
-                //cBox.Items.Add(rep.GetMaterials()[0]);
-
-                cBox.DataSource = rep.GetMaterials();
+                cBox.DataSource = materialRepository.GetMaterials();
                 cBox.BindingContext = new BindingContext();
                 cBox.DisplayMember = nameof(Material.Name);
                 cBox.ValueMember = nameof(Material.Name);
@@ -127,11 +122,14 @@ namespace BuildingEnergyLoss
             SendWallData();
             SendRoofData();
             SendSurroundingsData();
-            _viewModelFloor.BuildFloor();
-            _viewModelWall.BuildWall();
-            _viewModelRoof.BuildRoof();
-            double result = (_viewModelFloor.AreaHeatLoss + _viewModelWall.AreaHeatLoss + _viewModelRoof.AreaHeatLoss)*_viewModelSurroundings.AllModifiers();
-            tBox_Result.Text = result.ToString();
+            _viewModelFloor.BuildFloor(materialRepository);
+            _viewModelWall.BuildWall(materialRepository);
+            _viewModelRoof.BuildRoof(materialRepository);
+
+            tBox_Result.Text = new Calculation().GetFinalResult(_viewModelFloor, _viewModelRoof, _viewModelWall, _viewModelSurroundings,materialRepository);
+
+            //double result = (_viewModelFloor.AreaHeatLoss + _viewModelWall.AreaHeatLoss + _viewModelRoof.AreaHeatLoss)*_viewModelSurroundings.AllModifiers();
+            //tBox_Result.Text = result.ToString();
         }
     }
 }

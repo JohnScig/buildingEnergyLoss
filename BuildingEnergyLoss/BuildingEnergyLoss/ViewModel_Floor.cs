@@ -31,9 +31,9 @@ namespace BuildingEnergyLoss
         public double Area { get; set; }
 
 
-        public void BuildFloor()
+        public void BuildFloor(MaterialRepository rep)
         {
-            MaterialRepository rep = new MaterialRepository();
+            //MaterialRepository rep = new MaterialRepository();
             FloorMats = new List<IMaterial>();
             if (!string.IsNullOrWhiteSpace(FloorMaterial01))
             {
