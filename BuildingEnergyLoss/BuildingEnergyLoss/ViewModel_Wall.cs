@@ -32,28 +32,29 @@ namespace BuildingEnergyLoss
 
         public void BuildWall()
         {
+            MaterialRepository rep = new MaterialRepository();
             WallMats = new List<IMaterial>();
             if (!string.IsNullOrWhiteSpace(WallMaterial01))
             {
-                WallMat01 = new Material(WallMaterial01, WallMaterial01Girth);
+                WallMat01 = rep.CreateMaterial(WallMaterial01, WallMaterial01Girth);
                 WallMats.Add(WallMat01);
             }
 
             if (!string.IsNullOrWhiteSpace(WallMaterial02))
             {
-                WallMat02 = new Material(WallMaterial02, WallMaterial02Girth);
+                WallMat02 = rep.CreateMaterial(WallMaterial02, WallMaterial02Girth);
                 WallMats.Add(WallMat02);
             }
 
             if (!string.IsNullOrWhiteSpace(WallMaterial03))
             {
-                WallMat03 = new Material(WallMaterial03, WallMaterial03Girth);
+                WallMat03 = rep.CreateMaterial(WallMaterial03, WallMaterial03Girth);
                 WallMats.Add(WallMat03);
             }
 
             if (!string.IsNullOrWhiteSpace(WallMaterial04))
             {
-                WallMat04 = new Material(WallMaterial04, WallMaterial04Girth);
+                WallMat04 = rep.CreateMaterial(WallMaterial04, WallMaterial04Girth);
                 WallMats.Add(WallMat04);
             }
 

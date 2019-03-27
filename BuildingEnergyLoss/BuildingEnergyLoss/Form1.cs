@@ -35,7 +35,14 @@ namespace BuildingEnergyLoss
             IMaterialRepository rep = new MaterialRepository();
             foreach (ComboBox cBox in comboBoxes)
             {
+                //foreach (Material material in rep.GetMaterials())
+                //{
+                //    cBox.Items.Add(material);
+                //}
+                //cBox.Items.Add(rep.GetMaterials()[0]);
+
                 cBox.DataSource = rep.GetMaterials();
+                cBox.BindingContext = new BindingContext();
                 cBox.DisplayMember = nameof(Material.Name);
                 cBox.ValueMember = nameof(Material.Name);
             }

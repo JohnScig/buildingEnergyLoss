@@ -30,6 +30,17 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_Surroundings = new System.Windows.Forms.TabPage();
+            this.gBox_CoverFactor = new System.Windows.Forms.GroupBox();
+            this.rBtn_CoverNone = new System.Windows.Forms.RadioButton();
+            this.rBtn_CoverPartial = new System.Windows.Forms.RadioButton();
+            this.rBtn_CoverFull = new System.Windows.Forms.RadioButton();
+            this.gBox_WindFactor = new System.Windows.Forms.GroupBox();
+            this.rBtn_WindWindy = new System.Windows.Forms.RadioButton();
+            this.rBtn_WindNormal = new System.Windows.Forms.RadioButton();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tBox_InTemp = new System.Windows.Forms.TextBox();
+            this.tBox_OutTemp = new System.Windows.Forms.TextBox();
             this.tab_Floors = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
             this.tBox_FloorArea = new System.Windows.Forms.TextBox();
@@ -59,6 +70,8 @@
             this.cBox_FloorMaterial01 = new System.Windows.Forms.ComboBox();
             this.lbl_floorTab = new System.Windows.Forms.Label();
             this.tab_Walls = new System.Windows.Forms.TabPage();
+            this.label28 = new System.Windows.Forms.Label();
+            this.tBox_WallArea = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tbox_WallGirth04 = new System.Windows.Forms.TextBox();
@@ -85,6 +98,8 @@
             this.cBox_WallMaterial01 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tab_Roof = new System.Windows.Forms.TabPage();
+            this.label29 = new System.Windows.Forms.Label();
+            this.tBox_RoofArea = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.tbox_RoofGirth04 = new System.Windows.Forms.TextBox();
@@ -113,23 +128,10 @@
             this.tab_HeatGain = new System.Windows.Forms.TabPage();
             this.btn_Calculate = new System.Windows.Forms.Button();
             this.tBox_Result = new System.Windows.Forms.RichTextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.tBox_WallArea = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tBox_RoofArea = new System.Windows.Forms.TextBox();
-            this.tBox_OutTemp = new System.Windows.Forms.TextBox();
-            this.tBox_InTemp = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.gBox_WindFactor = new System.Windows.Forms.GroupBox();
-            this.rBtn_WindNormal = new System.Windows.Forms.RadioButton();
-            this.rBtn_WindWindy = new System.Windows.Forms.RadioButton();
-            this.gBox_CoverFactor = new System.Windows.Forms.GroupBox();
-            this.rBtn_CoverPartial = new System.Windows.Forms.RadioButton();
-            this.rBtn_CoverFull = new System.Windows.Forms.RadioButton();
-            this.rBtn_CoverNone = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tab_Surroundings.SuspendLayout();
+            this.gBox_CoverFactor.SuspendLayout();
+            this.gBox_WindFactor.SuspendLayout();
             this.tab_Floors.SuspendLayout();
             this.panel_Floor_04.SuspendLayout();
             this.panel_Floor_03.SuspendLayout();
@@ -145,8 +147,6 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.gBox_WindFactor.SuspendLayout();
-            this.gBox_CoverFactor.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -180,6 +180,116 @@
             this.tab_Surroundings.TabIndex = 0;
             this.tab_Surroundings.Text = "Surroundings";
             // 
+            // gBox_CoverFactor
+            // 
+            this.gBox_CoverFactor.Controls.Add(this.rBtn_CoverNone);
+            this.gBox_CoverFactor.Controls.Add(this.rBtn_CoverPartial);
+            this.gBox_CoverFactor.Controls.Add(this.rBtn_CoverFull);
+            this.gBox_CoverFactor.Location = new System.Drawing.Point(67, 244);
+            this.gBox_CoverFactor.Name = "gBox_CoverFactor";
+            this.gBox_CoverFactor.Size = new System.Drawing.Size(200, 111);
+            this.gBox_CoverFactor.TabIndex = 5;
+            this.gBox_CoverFactor.TabStop = false;
+            this.gBox_CoverFactor.Text = "Coverage Factor";
+            // 
+            // rBtn_CoverNone
+            // 
+            this.rBtn_CoverNone.AutoSize = true;
+            this.rBtn_CoverNone.Location = new System.Drawing.Point(9, 77);
+            this.rBtn_CoverNone.Name = "rBtn_CoverNone";
+            this.rBtn_CoverNone.Size = new System.Drawing.Size(70, 17);
+            this.rBtn_CoverNone.TabIndex = 2;
+            this.rBtn_CoverNone.TabStop = true;
+            this.rBtn_CoverNone.Text = "No Cover";
+            this.rBtn_CoverNone.UseVisualStyleBackColor = true;
+            // 
+            // rBtn_CoverPartial
+            // 
+            this.rBtn_CoverPartial.AutoSize = true;
+            this.rBtn_CoverPartial.Location = new System.Drawing.Point(9, 54);
+            this.rBtn_CoverPartial.Name = "rBtn_CoverPartial";
+            this.rBtn_CoverPartial.Size = new System.Drawing.Size(85, 17);
+            this.rBtn_CoverPartial.TabIndex = 1;
+            this.rBtn_CoverPartial.TabStop = true;
+            this.rBtn_CoverPartial.Text = "Partial Cover";
+            this.rBtn_CoverPartial.UseVisualStyleBackColor = true;
+            // 
+            // rBtn_CoverFull
+            // 
+            this.rBtn_CoverFull.AutoSize = true;
+            this.rBtn_CoverFull.Location = new System.Drawing.Point(9, 31);
+            this.rBtn_CoverFull.Name = "rBtn_CoverFull";
+            this.rBtn_CoverFull.Size = new System.Drawing.Size(72, 17);
+            this.rBtn_CoverFull.TabIndex = 0;
+            this.rBtn_CoverFull.TabStop = true;
+            this.rBtn_CoverFull.Text = "Full Cover";
+            this.rBtn_CoverFull.UseVisualStyleBackColor = true;
+            // 
+            // gBox_WindFactor
+            // 
+            this.gBox_WindFactor.Controls.Add(this.rBtn_WindWindy);
+            this.gBox_WindFactor.Controls.Add(this.rBtn_WindNormal);
+            this.gBox_WindFactor.Location = new System.Drawing.Point(67, 130);
+            this.gBox_WindFactor.Name = "gBox_WindFactor";
+            this.gBox_WindFactor.Size = new System.Drawing.Size(200, 85);
+            this.gBox_WindFactor.TabIndex = 4;
+            this.gBox_WindFactor.TabStop = false;
+            this.gBox_WindFactor.Text = "Wind Factor";
+            // 
+            // rBtn_WindWindy
+            // 
+            this.rBtn_WindWindy.AutoSize = true;
+            this.rBtn_WindWindy.Location = new System.Drawing.Point(9, 54);
+            this.rBtn_WindWindy.Name = "rBtn_WindWindy";
+            this.rBtn_WindWindy.Size = new System.Drawing.Size(55, 17);
+            this.rBtn_WindWindy.TabIndex = 1;
+            this.rBtn_WindWindy.TabStop = true;
+            this.rBtn_WindWindy.Text = "Windy";
+            this.rBtn_WindWindy.UseVisualStyleBackColor = true;
+            // 
+            // rBtn_WindNormal
+            // 
+            this.rBtn_WindNormal.AutoSize = true;
+            this.rBtn_WindNormal.Location = new System.Drawing.Point(9, 31);
+            this.rBtn_WindNormal.Name = "rBtn_WindNormal";
+            this.rBtn_WindNormal.Size = new System.Drawing.Size(58, 17);
+            this.rBtn_WindNormal.TabIndex = 0;
+            this.rBtn_WindNormal.TabStop = true;
+            this.rBtn_WindNormal.Text = "Normal";
+            this.rBtn_WindNormal.UseVisualStyleBackColor = true;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(20, 80);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(141, 13);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "Average Inside Temperature";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(12, 54);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(149, 13);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Average Outside Temperature";
+            // 
+            // tBox_InTemp
+            // 
+            this.tBox_InTemp.Location = new System.Drawing.Point(167, 77);
+            this.tBox_InTemp.Name = "tBox_InTemp";
+            this.tBox_InTemp.Size = new System.Drawing.Size(100, 20);
+            this.tBox_InTemp.TabIndex = 1;
+            // 
+            // tBox_OutTemp
+            // 
+            this.tBox_OutTemp.Location = new System.Drawing.Point(167, 51);
+            this.tBox_OutTemp.Name = "tBox_OutTemp";
+            this.tBox_OutTemp.Size = new System.Drawing.Size(100, 20);
+            this.tBox_OutTemp.TabIndex = 0;
+            // 
             // tab_Floors
             // 
             this.tab_Floors.BackColor = System.Drawing.Color.LightGray;
@@ -212,7 +322,7 @@
             this.tBox_FloorArea.Name = "tBox_FloorArea";
             this.tBox_FloorArea.Size = new System.Drawing.Size(63, 20);
             this.tBox_FloorArea.TabIndex = 6;
-            this.tBox_FloorArea.Text = "0";
+            this.tBox_FloorArea.Text = "1";
             // 
             // panel_Floor_04
             // 
@@ -459,6 +569,23 @@
             this.tab_Walls.TabIndex = 2;
             this.tab_Walls.Text = "Walls";
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(74, 437);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(56, 13);
+            this.label28.TabIndex = 12;
+            this.label28.Text = "Total Area";
+            // 
+            // tBox_WallArea
+            // 
+            this.tBox_WallArea.Location = new System.Drawing.Point(136, 434);
+            this.tBox_WallArea.Name = "tBox_WallArea";
+            this.tBox_WallArea.Size = new System.Drawing.Size(63, 20);
+            this.tBox_WallArea.TabIndex = 11;
+            this.tBox_WallArea.Text = "1";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -703,6 +830,23 @@
             this.tab_Roof.Size = new System.Drawing.Size(768, 468);
             this.tab_Roof.TabIndex = 3;
             this.tab_Roof.Text = "Roof";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(74, 437);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(56, 13);
+            this.label29.TabIndex = 17;
+            this.label29.Text = "Total Area";
+            // 
+            // tBox_RoofArea
+            // 
+            this.tBox_RoofArea.Location = new System.Drawing.Point(136, 434);
+            this.tBox_RoofArea.Name = "tBox_RoofArea";
+            this.tBox_RoofArea.Size = new System.Drawing.Size(63, 20);
+            this.tBox_RoofArea.TabIndex = 16;
+            this.tBox_RoofArea.Text = "1";
             // 
             // panel5
             // 
@@ -960,150 +1104,6 @@
             this.tBox_Result.TabIndex = 2;
             this.tBox_Result.Text = "";
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(74, 437);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(56, 13);
-            this.label28.TabIndex = 12;
-            this.label28.Text = "Total Area";
-            // 
-            // tBox_WallArea
-            // 
-            this.tBox_WallArea.Location = new System.Drawing.Point(136, 434);
-            this.tBox_WallArea.Name = "tBox_WallArea";
-            this.tBox_WallArea.Size = new System.Drawing.Size(63, 20);
-            this.tBox_WallArea.TabIndex = 11;
-            this.tBox_WallArea.Text = "0";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(74, 437);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(56, 13);
-            this.label29.TabIndex = 17;
-            this.label29.Text = "Total Area";
-            // 
-            // tBox_RoofArea
-            // 
-            this.tBox_RoofArea.Location = new System.Drawing.Point(136, 434);
-            this.tBox_RoofArea.Name = "tBox_RoofArea";
-            this.tBox_RoofArea.Size = new System.Drawing.Size(63, 20);
-            this.tBox_RoofArea.TabIndex = 16;
-            this.tBox_RoofArea.Text = "0";
-            // 
-            // tBox_OutTemp
-            // 
-            this.tBox_OutTemp.Location = new System.Drawing.Point(167, 51);
-            this.tBox_OutTemp.Name = "tBox_OutTemp";
-            this.tBox_OutTemp.Size = new System.Drawing.Size(100, 20);
-            this.tBox_OutTemp.TabIndex = 0;
-            // 
-            // tBox_InTemp
-            // 
-            this.tBox_InTemp.Location = new System.Drawing.Point(167, 77);
-            this.tBox_InTemp.Name = "tBox_InTemp";
-            this.tBox_InTemp.Size = new System.Drawing.Size(100, 20);
-            this.tBox_InTemp.TabIndex = 1;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(12, 54);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(149, 13);
-            this.label30.TabIndex = 2;
-            this.label30.Text = "Average Outside Temperature";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(20, 80);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(141, 13);
-            this.label31.TabIndex = 3;
-            this.label31.Text = "Average Inside Temperature";
-            // 
-            // gBox_WindFactor
-            // 
-            this.gBox_WindFactor.Controls.Add(this.rBtn_WindWindy);
-            this.gBox_WindFactor.Controls.Add(this.rBtn_WindNormal);
-            this.gBox_WindFactor.Location = new System.Drawing.Point(67, 130);
-            this.gBox_WindFactor.Name = "gBox_WindFactor";
-            this.gBox_WindFactor.Size = new System.Drawing.Size(200, 85);
-            this.gBox_WindFactor.TabIndex = 4;
-            this.gBox_WindFactor.TabStop = false;
-            this.gBox_WindFactor.Text = "Wind Factor";
-            // 
-            // rBtn_WindNormal
-            // 
-            this.rBtn_WindNormal.AutoSize = true;
-            this.rBtn_WindNormal.Location = new System.Drawing.Point(9, 31);
-            this.rBtn_WindNormal.Name = "rBtn_WindNormal";
-            this.rBtn_WindNormal.Size = new System.Drawing.Size(58, 17);
-            this.rBtn_WindNormal.TabIndex = 0;
-            this.rBtn_WindNormal.TabStop = true;
-            this.rBtn_WindNormal.Text = "Normal";
-            this.rBtn_WindNormal.UseVisualStyleBackColor = true;
-            // 
-            // rBtn_WindWindy
-            // 
-            this.rBtn_WindWindy.AutoSize = true;
-            this.rBtn_WindWindy.Location = new System.Drawing.Point(9, 54);
-            this.rBtn_WindWindy.Name = "rBtn_WindWindy";
-            this.rBtn_WindWindy.Size = new System.Drawing.Size(55, 17);
-            this.rBtn_WindWindy.TabIndex = 1;
-            this.rBtn_WindWindy.TabStop = true;
-            this.rBtn_WindWindy.Text = "Windy";
-            this.rBtn_WindWindy.UseVisualStyleBackColor = true;
-            // 
-            // gBox_CoverFactor
-            // 
-            this.gBox_CoverFactor.Controls.Add(this.rBtn_CoverNone);
-            this.gBox_CoverFactor.Controls.Add(this.rBtn_CoverPartial);
-            this.gBox_CoverFactor.Controls.Add(this.rBtn_CoverFull);
-            this.gBox_CoverFactor.Location = new System.Drawing.Point(67, 244);
-            this.gBox_CoverFactor.Name = "gBox_CoverFactor";
-            this.gBox_CoverFactor.Size = new System.Drawing.Size(200, 111);
-            this.gBox_CoverFactor.TabIndex = 5;
-            this.gBox_CoverFactor.TabStop = false;
-            this.gBox_CoverFactor.Text = "Coverage Factor";
-            // 
-            // rBtn_CoverPartial
-            // 
-            this.rBtn_CoverPartial.AutoSize = true;
-            this.rBtn_CoverPartial.Location = new System.Drawing.Point(9, 54);
-            this.rBtn_CoverPartial.Name = "rBtn_CoverPartial";
-            this.rBtn_CoverPartial.Size = new System.Drawing.Size(85, 17);
-            this.rBtn_CoverPartial.TabIndex = 1;
-            this.rBtn_CoverPartial.TabStop = true;
-            this.rBtn_CoverPartial.Text = "Partial Cover";
-            this.rBtn_CoverPartial.UseVisualStyleBackColor = true;
-            // 
-            // rBtn_CoverFull
-            // 
-            this.rBtn_CoverFull.AutoSize = true;
-            this.rBtn_CoverFull.Location = new System.Drawing.Point(9, 31);
-            this.rBtn_CoverFull.Name = "rBtn_CoverFull";
-            this.rBtn_CoverFull.Size = new System.Drawing.Size(72, 17);
-            this.rBtn_CoverFull.TabIndex = 0;
-            this.rBtn_CoverFull.TabStop = true;
-            this.rBtn_CoverFull.Text = "Full Cover";
-            this.rBtn_CoverFull.UseVisualStyleBackColor = true;
-            // 
-            // rBtn_CoverNone
-            // 
-            this.rBtn_CoverNone.AutoSize = true;
-            this.rBtn_CoverNone.Location = new System.Drawing.Point(9, 77);
-            this.rBtn_CoverNone.Name = "rBtn_CoverNone";
-            this.rBtn_CoverNone.Size = new System.Drawing.Size(70, 17);
-            this.rBtn_CoverNone.TabIndex = 2;
-            this.rBtn_CoverNone.TabStop = true;
-            this.rBtn_CoverNone.Text = "No Cover";
-            this.rBtn_CoverNone.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1117,6 +1117,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tab_Surroundings.ResumeLayout(false);
             this.tab_Surroundings.PerformLayout();
+            this.gBox_CoverFactor.ResumeLayout(false);
+            this.gBox_CoverFactor.PerformLayout();
+            this.gBox_WindFactor.ResumeLayout(false);
+            this.gBox_WindFactor.PerformLayout();
             this.tab_Floors.ResumeLayout(false);
             this.tab_Floors.PerformLayout();
             this.panel_Floor_04.ResumeLayout(false);
@@ -1147,10 +1151,6 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.gBox_WindFactor.ResumeLayout(false);
-            this.gBox_WindFactor.PerformLayout();
-            this.gBox_CoverFactor.ResumeLayout(false);
-            this.gBox_CoverFactor.PerformLayout();
             this.ResumeLayout(false);
 
         }

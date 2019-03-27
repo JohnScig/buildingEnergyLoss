@@ -33,29 +33,30 @@ namespace BuildingEnergyLoss
 
         public void BuildFloor()
         {
+            MaterialRepository rep = new MaterialRepository();
             FloorMats = new List<IMaterial>();
             if (!string.IsNullOrWhiteSpace(FloorMaterial01))
             {
-                FloorMat01 = new Material(FloorMaterial01, FloorMaterial01Girth);
+                FloorMat01 = rep.CreateMaterial(FloorMaterial01, FloorMaterial01Girth);
                 FloorMats.Add(FloorMat01);
 
             }
 
             if (!string.IsNullOrWhiteSpace(FloorMaterial02))
             {
-                FloorMat02 = new Material(FloorMaterial02, FloorMaterial02Girth);
+                FloorMat02 = rep.CreateMaterial(FloorMaterial02, FloorMaterial02Girth);
                 FloorMats.Add(FloorMat02);
             }
 
             if (!string.IsNullOrWhiteSpace(FloorMaterial03))
             {
-                FloorMat03 = new Material(FloorMaterial03, FloorMaterial03Girth);
+                FloorMat03 = rep.CreateMaterial(FloorMaterial03, FloorMaterial03Girth);
                 FloorMats.Add(FloorMat03);
             }
 
             if (!string.IsNullOrWhiteSpace(FloorMaterial04))
             {
-                FloorMat04 = new Material(FloorMaterial04, FloorMaterial04Girth);
+                FloorMat04 = rep.CreateMaterial(FloorMaterial04, FloorMaterial04Girth);
                 FloorMats.Add(FloorMat04);
             }
 

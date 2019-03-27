@@ -32,29 +32,30 @@ namespace BuildingEnergyLoss
 
         public void BuildRoof()
         {
+            MaterialRepository rep = new MaterialRepository();
             RoofMats = new List<IMaterial>();
             if (!string.IsNullOrWhiteSpace(RoofMaterial01))
             {
-                RoofMat01 = new Material(RoofMaterial01, RoofMaterial01Girth);
+                RoofMat01 = rep.CreateMaterial(RoofMaterial01, RoofMaterial01Girth);
                 RoofMats.Add(RoofMat01);
 
             }
 
             if (!string.IsNullOrWhiteSpace(RoofMaterial02))
             {
-                RoofMat02 = new Material(RoofMaterial02, RoofMaterial02Girth);
+                RoofMat02 = rep.CreateMaterial(RoofMaterial02, RoofMaterial02Girth);
                 RoofMats.Add(RoofMat02);
             }
 
             if (!string.IsNullOrWhiteSpace(RoofMaterial03))
             {
-                RoofMat03 = new Material(RoofMaterial03, RoofMaterial03Girth);
+                RoofMat03 = rep.CreateMaterial(RoofMaterial03, RoofMaterial03Girth);
                 RoofMats.Add(RoofMat03);
             }
 
             if (!string.IsNullOrWhiteSpace(RoofMaterial04))
             {
-                RoofMat04 = new Material(RoofMaterial04, RoofMaterial04Girth);
+                RoofMat04 = rep.CreateMaterial(RoofMaterial04, RoofMaterial04Girth);
                 RoofMats.Add(RoofMat04);
             }
 
