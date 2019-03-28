@@ -27,7 +27,6 @@ namespace BuildingEnergyLoss
             if (!(Material02Girth == 0)) { Mats.Add(rep.CreateMaterial(Material02, Material02Girth)); }          
             if (!(Material02Girth == 0)) { Mats.Add(rep.CreateMaterial(Material03, Material03Girth)); }
             if (!(Material02Girth == 0)) { Mats.Add(rep.CreateMaterial(Material04, Material04Girth)); }
-            
 
             return (new Fabric(Mats, Area)).AreaFabricHeatLoss();
         }

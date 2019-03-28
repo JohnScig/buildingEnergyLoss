@@ -12,8 +12,6 @@ namespace BuildingEnergyLoss
         public double TotalArea { get; set; }
         public List<IMaterial> Materials { get; set; }
 
-
-
         public Fabric(string name, List<IMaterial> materials, double totalArea)
         {
             this.Name = name;
@@ -21,7 +19,7 @@ namespace BuildingEnergyLoss
             this.TotalArea = totalArea;
         }
 
-    public Fabric(List<IMaterial> materials, double totalArea)
+        public Fabric(List<IMaterial> materials, double totalArea)
         {
             this.Materials = materials;
             this.TotalArea = totalArea;

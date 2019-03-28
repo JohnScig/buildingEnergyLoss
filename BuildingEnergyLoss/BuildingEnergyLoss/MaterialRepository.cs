@@ -35,7 +35,6 @@ namespace BuildingEnergyLoss
                         Thickness = thickness };
                 }
             }
-
             return new Material();
         }
 
@@ -43,8 +42,6 @@ namespace BuildingEnergyLoss
         {
             string[] lines = File.ReadAllLines(filePath);
             List<Material> materials = new List<Material>();
-
-            //sb.AppendLine($"{NumberOfPlayers}\t{Turn}\t{WinLength}\t{FieldSize}");
 
             for (int i = 0; i < lines.Length; i++)
             {

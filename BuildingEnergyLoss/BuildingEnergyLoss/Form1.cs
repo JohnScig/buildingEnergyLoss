@@ -27,7 +27,6 @@ namespace BuildingEnergyLoss
         private ViewModelSurroundings _viewModelSurroundings = new ViewModelSurroundings();
         private ViewModelHeatGain _viewModelHeatGain = new ViewModelHeatGain();
 
-
         public void LoadComboBoxes()
         {
             List<ComboBox> comboBoxes = new List<ComboBox>()
