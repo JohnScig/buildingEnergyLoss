@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculation.cs" />
     <Compile Include="Fabric.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -61,6 +60,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelGeneral.cs" />
+    <Compile Include="ViewModelHeatGain.cs" />
     <Compile Include="ViewModel_Floor.cs" />
     <Compile Include="ViewModel_Roof.cs" />
     <Compile Include="ViewModelSurroundings.cs" />

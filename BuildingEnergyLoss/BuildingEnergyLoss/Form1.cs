@@ -23,7 +23,10 @@ namespace BuildingEnergyLoss
         private ViewModelGeneral _viewModelFloor = new ViewModelGeneral();
         private ViewModelGeneral _viewModelWall = new ViewModelGeneral();
         private ViewModelGeneral _viewModelRoof = new ViewModelGeneral();
+        private ViewModelGeneral _viewModelWindows = new ViewModelGeneral();
         private ViewModelSurroundings _viewModelSurroundings = new ViewModelSurroundings();
+        private ViewModelHeatGain _viewModelHeatGain = new ViewModelHeatGain();
+
 
         public void LoadComboBoxes()
         {
@@ -88,7 +91,12 @@ namespace BuildingEnergyLoss
 
         public void SendWindowData()
         {
-            //_viewModelWall.WinArea = double.Parse(tBox_WinArea.Text);
+            _viewModelWindows.Material01 = cBox_WindowMaterial01.SelectedValue.ToString();
+
+            _viewModelWindows.Material01Girth = double.Parse(tBox_WindowGirth01.Text);
+
+            _viewModelWindows.Area = double.Parse(tBox_WinArea.Text);
+
         }
 
         public void SendWallData()
@@ -121,14 +129,22 @@ namespace BuildingEnergyLoss
             _viewModelRoof.Area = double.Parse(tBox_RoofArea.Text);
         }
 
+        public void SendHeatGainData()
+        {
+            _viewModelHeatGain.NumOfPeople = int.Parse(tBox_NumOfPeople.Text);
+            _viewModelHeatGain.NumOfAppliances = int.Parse(tBox_NumOfAppliances.Text);
+        }
+
         private void btn_Calculate_Click(object sender, EventArgs e)
         {
             SendFloorData();
             SendWallData();
             SendRoofData();
+            SendWindowData();
             SendSurroundingsData();
+            SendHeatGainData();
 
-            tBox_Result.Text = _mainViewModel.GetFinalResult(_viewModelFloor, _viewModelRoof, _viewModelWall, _viewModelSurroundings);
+            tBox_Result.Text = _mainViewModel.GetFinalResult(_viewModelFloor, _viewModelRoof, _viewModelWall, _viewModelWindows, _viewModelSurroundings, _viewModelHeatGain);
         }
     }
 }

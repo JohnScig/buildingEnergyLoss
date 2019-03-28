@@ -72,6 +72,8 @@
             this.tab_Walls = new System.Windows.Forms.TabPage();
             this.tBox_WinArea = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.tBox_WindowGirth01 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.cBox_WindowMaterial01 = new System.Windows.Forms.ComboBox();
@@ -134,8 +136,14 @@
             this.tab_HeatGain = new System.Windows.Forms.TabPage();
             this.btn_Calculate = new System.Windows.Forms.Button();
             this.tBox_Result = new System.Windows.Forms.RichTextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.tBox_WindowGirth01 = new System.Windows.Forms.TextBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.tBox_NumOfAppliances = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label39 = new System.Windows.Forms.Label();
+            this.tBox_NumOfPeople = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tab_Surroundings.SuspendLayout();
             this.gBox_CoverFactor.SuspendLayout();
@@ -156,6 +164,9 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.tab_HeatGain.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -185,7 +196,7 @@
             this.tab_Surroundings.Location = new System.Drawing.Point(4, 22);
             this.tab_Surroundings.Name = "tab_Surroundings";
             this.tab_Surroundings.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Surroundings.Size = new System.Drawing.Size(402, 468);
+            this.tab_Surroundings.Size = new System.Drawing.Size(482, 468);
             this.tab_Surroundings.TabIndex = 0;
             this.tab_Surroundings.Text = "Surroundings";
             // 
@@ -335,6 +346,7 @@
             // 
             // panel_Floor_04
             // 
+            this.panel_Floor_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Floor_04.Controls.Add(this.lbl_FloorGirth04);
             this.panel_Floor_04.Controls.Add(this.tbox_FloorGirth04);
             this.panel_Floor_04.Controls.Add(this.lbl_FloorMaterialType04);
@@ -390,6 +402,7 @@
             // 
             // panel_Floor_03
             // 
+            this.panel_Floor_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Floor_03.Controls.Add(this.lbl_FloorGirth03);
             this.panel_Floor_03.Controls.Add(this.tbox_FloorGirth03);
             this.panel_Floor_03.Controls.Add(this.lbl_FloorMaterialType03);
@@ -445,6 +458,7 @@
             // 
             // panel_Floor_02
             // 
+            this.panel_Floor_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Floor_02.Controls.Add(this.lbl_FloorGirth02);
             this.panel_Floor_02.Controls.Add(this.tbox_FloorGirth02);
             this.panel_Floor_02.Controls.Add(this.lbl_FloorMaterialType02);
@@ -500,6 +514,7 @@
             // 
             // panel_Floor_01
             // 
+            this.panel_Floor_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Floor_01.Controls.Add(this.lbl_FloorGirth01);
             this.panel_Floor_01.Controls.Add(this.tbox_FloorGirth01);
             this.panel_Floor_01.Controls.Add(this.lbl_FloorMaterialType01);
@@ -565,6 +580,7 @@
             // tab_Walls
             // 
             this.tab_Walls.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.tab_Walls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tab_Walls.Controls.Add(this.tBox_WinArea);
             this.tab_Walls.Controls.Add(this.panel9);
             this.tab_Walls.Controls.Add(this.label33);
@@ -591,6 +607,7 @@
             // 
             // panel9
             // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.label35);
             this.panel9.Controls.Add(this.tBox_WindowGirth01);
             this.panel9.Controls.Add(this.label34);
@@ -600,6 +617,23 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(221, 90);
             this.panel9.TabIndex = 13;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(127, 47);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(29, 13);
+            this.label35.TabIndex = 16;
+            this.label35.Text = "Girth";
+            // 
+            // tBox_WindowGirth01
+            // 
+            this.tBox_WindowGirth01.Location = new System.Drawing.Point(130, 67);
+            this.tBox_WindowGirth01.Name = "tBox_WindowGirth01";
+            this.tBox_WindowGirth01.Size = new System.Drawing.Size(63, 20);
+            this.tBox_WindowGirth01.TabIndex = 15;
+            this.tBox_WindowGirth01.Text = "0";
             // 
             // label34
             // 
@@ -655,6 +689,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.tbox_WallGirth04);
             this.panel1.Controls.Add(this.label2);
@@ -710,6 +745,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.tbox_WallGirth03);
             this.panel2.Controls.Add(this.label5);
@@ -765,6 +801,7 @@
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.tbox_WallGirth02);
             this.panel3.Controls.Add(this.label8);
@@ -820,6 +857,7 @@
             // 
             // panel4
             // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.tbox_WallGirth01);
             this.panel4.Controls.Add(this.label11);
@@ -917,6 +955,7 @@
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.tbox_RoofGirth04);
             this.panel5.Controls.Add(this.label15);
@@ -972,6 +1011,7 @@
             // 
             // panel6
             // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label17);
             this.panel6.Controls.Add(this.tbox_RoofGirth03);
             this.panel6.Controls.Add(this.label18);
@@ -1027,6 +1067,7 @@
             // 
             // panel7
             // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.label20);
             this.panel7.Controls.Add(this.tbox_RoofGirth02);
             this.panel7.Controls.Add(this.label21);
@@ -1082,6 +1123,7 @@
             // 
             // panel8
             // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.label23);
             this.panel8.Controls.Add(this.tbox_RoofGirth01);
             this.panel8.Controls.Add(this.label24);
@@ -1147,9 +1189,12 @@
             // tab_HeatGain
             // 
             this.tab_HeatGain.BackColor = System.Drawing.Color.MistyRose;
+            this.tab_HeatGain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tab_HeatGain.Controls.Add(this.panel10);
+            this.tab_HeatGain.Controls.Add(this.panel11);
             this.tab_HeatGain.Location = new System.Drawing.Point(4, 22);
             this.tab_HeatGain.Name = "tab_HeatGain";
-            this.tab_HeatGain.Size = new System.Drawing.Size(402, 468);
+            this.tab_HeatGain.Size = new System.Drawing.Size(482, 468);
             this.tab_HeatGain.TabIndex = 4;
             this.tab_HeatGain.Text = "Heat Gain";
             // 
@@ -1171,22 +1216,79 @@
             this.tBox_Result.TabIndex = 2;
             this.tBox_Result.Text = "";
             // 
-            // label35
+            // panel10
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(127, 47);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(29, 13);
-            this.label35.TabIndex = 16;
-            this.label35.Text = "Girth";
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.label36);
+            this.panel10.Controls.Add(this.tBox_NumOfAppliances);
+            this.panel10.Controls.Add(this.label38);
+            this.panel10.Location = new System.Drawing.Point(3, 110);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(221, 90);
+            this.panel10.TabIndex = 10;
             // 
-            // tBox_WindowGirth01
+            // label36
             // 
-            this.tBox_WindowGirth01.Location = new System.Drawing.Point(130, 67);
-            this.tBox_WindowGirth01.Name = "tBox_WindowGirth01";
-            this.tBox_WindowGirth01.Size = new System.Drawing.Size(63, 20);
-            this.tBox_WindowGirth01.TabIndex = 15;
-            this.tBox_WindowGirth01.Text = "0";
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(4, 47);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(44, 13);
+            this.label36.TabIndex = 4;
+            this.label36.Text = "Number";
+            // 
+            // tBox_NumOfAppliances
+            // 
+            this.tBox_NumOfAppliances.Location = new System.Drawing.Point(7, 67);
+            this.tBox_NumOfAppliances.Name = "tBox_NumOfAppliances";
+            this.tBox_NumOfAppliances.Size = new System.Drawing.Size(63, 20);
+            this.tBox_NumOfAppliances.TabIndex = 3;
+            this.tBox_NumOfAppliances.Text = "0";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(4, 4);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(177, 13);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Number of Appliances In Household";
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.label39);
+            this.panel11.Controls.Add(this.tBox_NumOfPeople);
+            this.panel11.Controls.Add(this.label41);
+            this.panel11.Location = new System.Drawing.Point(3, 14);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(221, 90);
+            this.panel11.TabIndex = 9;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(4, 45);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(44, 13);
+            this.label39.TabIndex = 4;
+            this.label39.Text = "Number";
+            // 
+            // tBox_NumOfPeople
+            // 
+            this.tBox_NumOfPeople.Location = new System.Drawing.Point(7, 67);
+            this.tBox_NumOfPeople.Name = "tBox_NumOfPeople";
+            this.tBox_NumOfPeople.Size = new System.Drawing.Size(63, 20);
+            this.tBox_NumOfPeople.TabIndex = 3;
+            this.tBox_NumOfPeople.Text = "0";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(4, 4);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(158, 13);
+            this.label41.TabIndex = 1;
+            this.label41.Text = "Number of People In Household";
             // 
             // Form1
             // 
@@ -1197,7 +1299,7 @@
             this.Controls.Add(this.btn_Calculate);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Heat Loss Calculator";
             this.tabControl1.ResumeLayout(false);
             this.tab_Surroundings.ResumeLayout(false);
             this.tab_Surroundings.PerformLayout();
@@ -1237,6 +1339,11 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.tab_HeatGain.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1351,6 +1458,14 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox tBox_WindowGirth01;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox tBox_NumOfAppliances;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox tBox_NumOfPeople;
+        private System.Windows.Forms.Label label41;
     }
 }
 
